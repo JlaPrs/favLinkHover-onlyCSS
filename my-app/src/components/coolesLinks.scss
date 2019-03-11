@@ -1,0 +1,99 @@
+// coolest links
+.colored-links {
+  //display: flex;
+  //flex-direction: column;
+  margin-top: 20px;
+  padding: 50px;
+  background-color: #000;
+  display: block;
+
+
+  @mixin bg-gradient($start-colour, $end-colour) {
+    background-color: $start-colour;
+    background-image: -webkit-gradient(linear, left top, right top, from($start-colour), to($end-colour));
+    background-image:         linear-gradient(left, $start-colour, $end-colour);
+    filter:            progid:DXImageTransform.Microsoft.gradient(start-colourStr='#{$start-colour}', end-colourStr='#{$end-colour}', gradientType='1');
+  }
+
+  a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    left: 200px;
+    //text-align: center;
+    font-size: 34px;
+    z-index: 500;
+    &#captain {
+      &:before {
+        @include bg-gradient(#c62828, rgba(212,228,239,1));
+      }
+    }
+    &#iron-man {
+      &:before {
+        @include bg-gradient(#FFEB3B, #d32f2f);
+      }
+    }
+    &.green {
+      &:before {
+        @include bg-gradient(#2E7D32,#C5E1A5);
+      }
+    }
+    &.yellow {
+      &:before {
+        @include bg-gradient(#FFEB3B,#757575);
+      }
+    }
+    &.pink {
+      &:before {
+        @include bg-gradient(#F06292,#F8BBD0);
+      }
+    }
+    &.codepen {
+      &:before {
+        @include bg-gradient(#757575,#E0E0E0);
+      }
+    }
+    &.linkedin {
+      &:before {
+        @include bg-gradient(#039BE5,#000);
+      }
+    }
+    &.ubeeqo {
+      &:before {
+        @include bg-gradient(#01c5d3,#000);
+      }
+    }
+    &.twitter {
+      &:before {
+        @include bg-gradient(#2196F3,#000);
+      }
+    }
+    &.instagram {
+      &:before {
+        @include bg-gradient(#FFA726,#C2185B);
+      }
+    }
+    &:hover {
+      &:before {
+        width: calc(100% + 16px);
+      }
+      &:after {
+        opacity: 1;
+        right: -50px;
+      }
+    }
+    &:before {
+      z-index: -1;
+      height: 15px;
+      width: 0%;
+      background: rgba(212,228,239,1);
+      @include bg-gradient(rgba(134,174,204,1), rgba(212,228,239,1));
+      content:"";
+      position: absolute;
+      bottom: 3px;
+      left: -8px;
+      transition: all .4s cubic-bezier(0.7,0,0.3,1);
+    }
+  }
+}

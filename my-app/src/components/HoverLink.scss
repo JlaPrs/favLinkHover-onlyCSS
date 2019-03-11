@@ -1,0 +1,195 @@
+*, *:before, *:after {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+*:focus { outline: none!important; }
+
+// The micro clearfix
+// ------------------
+@mixin clearfix {
+  *zoom:1;
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.jla-link-hover-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #f1f1f1;
+}
+
+.jla-paragraph {
+  color: #616161;
+  font-family: "brandon-grotesque", "Brandon Grotesque";
+  font-size: 24px;
+  padding: 20px;
+  max-width: 600px;
+  line-height: 1.4;
+}
+
+a {
+  display: inline-block;
+  position: relative;
+  color: #343434;
+  text-decoration: none;
+  padding: 0 6px;
+  &:before, &:after {
+    will-change: transform;
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+  }
+  &:before {
+    transition: 100ms ease-out 50ms;
+    transform-origin: 0 24px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: mix(#f1f1f1, #0077ff, 80%);
+  }
+  &:after {
+    transition: 50ms ease-out;
+    transform: scaleX(0);
+    transform-origin: left center;
+    bottom: 2px;
+    right: -12px;
+    border: 8px solid transparent;
+    border-left-color: mix(#f1f1f1, #0077ff, 60%);
+  }
+  &:hover {
+    &:before {
+      transition: 100ms ease-out;
+      transform: scaleY(.18);
+      background: mix(#f1f1f1, #0077ff, 60%);
+    }
+    &:after {
+      transition: 50ms ease-out 100ms;
+      transform: none;
+    }
+  }
+  &:active {
+    &:before {
+      transition: 100ms ease-in;
+      background: mix(#f1f1f1, #0077ff, 40%);
+    }
+    &:after {
+      transition: 100ms ease-in;
+      border-left-color: mix(#f1f1f1, #0077ff, 40%);
+    }
+  }
+}
+
+//second paragraph link style
+
+$color-primary: #96e5df;
+
+@mixin inlineLinkHoverAnimation(
+  $color: $color-primary,
+  $opacity: 1,
+  $height-start: 80%,
+  $height-hover: 200%,
+  $height-active: $height-start,
+  $offset-start: 0,
+  $offset-hover: 0,
+  $offset-active: 0,
+  $duration: 160ms,
+  $element: '',
+  $from: 'bottom'
+){
+  & #{$element} {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    background-size: 100% ($height-start);
+    background-repeat: no-repeat;
+    transition: background $duration ease;
+
+    @if $from == 'bottom' {
+      background-image:         linear-gradient(to top, rgba($color, $opacity) 50%, rgba(0,0,0,0) 50.1%);
+      background-position: left 0 bottom ($offset-start);
+
+    } @else if $from == 'top' {
+      background-image: -webkit-linear-gradient(top,       rgba($color, $opacity) 50%, rgba(0,0,0,0) 50.1%);
+      background-image:    -moz-linear-gradient(top,       rgba($color, $opacity) 50%, rgba(0,0,0,0) 50.1%);
+      background-image:         linear-gradient(to bottom, rgba($color, $opacity) 50%, rgba(0,0,0,0) 50.1%);
+
+      background-position: left 0 top ($offset-start);
+    }
+
+  }
+
+  &:focus #{$element},
+  &:hover #{$element},
+  &:active #{$element}{
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:focus #{$element} {
+    outline: none;
+  }
+
+
+
+  &:hover #{$element}{
+    background-size: 100% ($height-hover);
+
+    @if $from == 'bottom' {
+      background-position: left 0 bottom ($offset-hover);
+    } @else if $from == 'top' {
+      background-position: left 0 top ($offset-hover);
+    }
+  }
+
+
+
+  &:active #{$element}{
+    background-size: 100% $height-active;
+
+    @if $from == 'bottom' {
+      background-position: left 0 bottom ($offset-active);
+    } @else if $from == 'top' {
+      background-position: left 0 top ($offset-active);
+    }
+  }
+}
+
+.a1 {
+  @include inlineLinkHoverAnimation();
+}
+
+.a2 {
+  @include inlineLinkHoverAnimation(
+    $height-start: 120%,
+    $height-active: 200%,
+    $offset-active: -60%,
+    $from: 'top'
+  );
+}
+
+// third paragraph link style
+.a3 {
+  text-decoration: none;
+  color: #000;
+  box-shadow: inset 0 -2px 0 0 #000;
+  display: inline-block;
+  transition: all .2s ease-in-out;
+  padding: 0 3px;
+  box-sizing: border-box;
+
+  &:hover {
+    border: none;
+    box-shadow: inset 0 -25px 0 0 #000;
+    color: #FFF;
+  }
+}
+
+
