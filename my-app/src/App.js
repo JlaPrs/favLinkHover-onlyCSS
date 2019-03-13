@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import HoverLink from "./components/HoverLink";
-import ColorPicker from "./components/ColorPicker";
+import LinkHover from "./components/LinkHover";
 import './App.scss';
 
 class App extends Component {
@@ -12,9 +12,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-            <ColorPicker />
+            <LinkHover />
 
-            <HoverLink/>
+            {/*<HoverLink/>*/}
         </header>
       </div>
     );
