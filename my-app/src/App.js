@@ -12,6 +12,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+            <h1>Choose a style and hover the link in the text</h1>
+
             <LinkHover />
 
             {/*<HoverLink/>*/}

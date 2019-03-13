@@ -37,7 +37,7 @@ export default class ColorPicker extends Component {
                 <p className="jla-paragraph">
                     Si enim ad populum me vocas, eum. Contineo me ab exemplis. Non potes,
                     <a href="#" className={this.state.styles}>nisi retexueris</a> illa. Certe non potest.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate nesciunt alias optio consequuntur
+                    Lorem ipsum dolor sit amet Voluptate nesciunt alias optio consequuntur
                     quae nisi aliquam adipisci, a <a className={this.state.styles} href="#">quas saepe</a> facere minus fugit praesentium, amet atque
                     dolorum nam omnis iste.
                 </p>
