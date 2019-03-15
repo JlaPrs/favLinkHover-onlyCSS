@@ -6,6 +6,7 @@
 .jla-select {
   background: transparent;
   border: 2px solid #fff;
+  cursor: pointer;
   color: #fff;
   padding: 20px;
   margin-top: 20px;
@@ -32,14 +33,6 @@
 }
 
 
-.jla-paragraph {
-  color: #efefef;
-  font-family: "brandon-grotesque", "Brandon Grotesque";
-  font-size: 24px;
-  padding: 20px;
-  max-width: 650px;
-  line-height: 1.6;
-}
 
 a {
   display: inline-block;
@@ -47,56 +40,9 @@ a {
   color: red;
   text-decoration: none;
   padding: 0 6px;
-  &:before, &:after {
-    will-change: transform;
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: -1;
-  }
-  &:before {
-    transition: 100ms ease-out 50ms;
-    transform-origin: 0 24px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: mix(#f1f1f1, #0077ff, 80%);
-  }
-  &:after {
-    transition: 50ms ease-out;
-    transform: scaleX(0);
-    transform-origin: left center;
-    bottom: 2px;
-    right: -12px;
-    border: 8px solid transparent;
-    border-left-color: mix(#f1f1f1, #0077ff, 60%);
-  }
-  &:hover {
-    &:before {
-      transition: 100ms ease-out;
-      transform: scaleY(.18);
-      background: mix(#f1f1f1, #0077ff, 60%);
-    }
-    &:after {
-      transition: 50ms ease-out 100ms;
-      transform: none;
-    }
-  }
-  &:active {
-    &:before {
-      transition: 100ms ease-in;
-      background: mix(#f1f1f1, #0077ff, 40%);
-    }
-    &:after {
-      transition: 100ms ease-in;
-      border-left-color: mix(#f1f1f1, #0077ff, 40%);
-    }
-  }
 }
 
 //second paragraph link style
-
 $color-primary: #67953b;
 
 @mixin inlineLinkHoverAnimation(
@@ -197,6 +143,44 @@ $color-primary: #67953b;
     border: none;
     box-shadow: inset 0 -38px 0 0 #efefef;
     color: #282c34;
+  }
+}
+
+.a4 {
+  display: inline-block;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  padding: 0 6px;
+  z-index: 2;
+
+  &:before {
+    will-change: transform;
+    content: "";
+    background: red;
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    z-index: -1;
+  }
+  &:before {
+    transition: 100ms ease-out 50ms;
+    transform-origin: 0 24px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $color-primary;
+    //opacity: 0.3;
+  }
+
+  &:hover {
+    &:before {
+      transition: 100ms ease-out;
+      transform: scaleY(.18);
+      background: $color-primary;
+    }
   }
 }
 

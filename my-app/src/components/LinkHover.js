@@ -10,7 +10,8 @@ export default class ColorPicker extends Component {
             styles: 'Please selcet one option',
             option1: 'a1',
             option2: 'a2',
-            option3: 'a3'
+            option3: 'a3',
+            option4: 'a4'
         };
     }
 
@@ -26,9 +27,10 @@ export default class ColorPicker extends Component {
             <div>
                 <select id="de" className="jla-select" onChange={this.handleChange.bind(this)} value={this.state.styles}>
                     <option className="jla-select-option" value="select">Select a Link style</option>
-                    <option className="jla-select-option" value={this.state.option1}>Option 1</option>
-                    <option className="jla-select-option" value={this.state.option2}>Option 2</option>
-                    <option className="jla-select-option" value={this.state.option3}>Option 3</option>
+                    <option className="jla-select-option" value={this.state.option1}>Bottom to top</option>
+                    <option className="jla-select-option" value={this.state.option2}>Top to Bottom</option>
+                    <option className="jla-select-option" value={this.state.option3}>Bottom to full</option>
+                    <option className="jla-select-option" value={this.state.option4}>Full to bottom</option>
                 </select>
                 <p className="jla-paragraph">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tamen
