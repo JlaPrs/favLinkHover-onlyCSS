@@ -11,7 +11,9 @@ export default class ColorPicker extends Component {
             option1: 'a1',
             option2: 'a2',
             option3: 'a3',
-            option4: 'a4'
+            option4: 'a4',
+            option5: 'a5',
+            option6: 'a6'
         };
     }
 
@@ -31,16 +33,18 @@ export default class ColorPicker extends Component {
                     <option className="jla-select-option" value={this.state.option2}>Top to Bottom</option>
                     <option className="jla-select-option" value={this.state.option3}>Bottom to full</option>
                     <option className="jla-select-option" value={this.state.option4}>Full to bottom</option>
+                    <option className="jla-select-option" value={this.state.option5}>brand colors</option>
+                    <option className="jla-select-option" value={this.state.option6}>cubic-bezier</option>
                 </select>
                 <p className="jla-paragraph">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tamen
-                    <a href="#" className={this.state.styles}>intellego</a> quid velit. Quod quidem iam fit etiam in Academia.
+                    <a href="#" className={`${this.state.styles} instagram`}>instagram</a> quid velit. Quod quidem iam fit etiam in Academia.
                 </p>
                 <p className="jla-paragraph">
                     Si enim ad populum me vocas, eum. Contineo me ab exemplis. Non potes,
-                    <a href="#" className={this.state.styles}>nisi retexueris</a> illa. Certe non potest.
+                    <a href="#" className={`${this.state.styles} twitter`}>twitter</a> illa. Certe non potest.
                     Lorem ipsum dolor sit amet Voluptate nesciunt alias optio consequuntur
-                    quae nisi aliquam adipisci, a <a className={this.state.styles} href="#">quas saepe</a> facere minus fugit praesentium, amet atque
+                    quae nisi aliquam adipisci, a <a className={`${this.state.styles} shrek`} href="#">shrek</a> facere minus fugit praesentium, amet atque
                     dolorum nam omnis iste.
                 </p>
 
