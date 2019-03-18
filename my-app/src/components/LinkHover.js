@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 
 import './HoverLink.scss';
-import './coolesLinks.scss';
 
 export default class ColorPicker extends Component {
     constructor(props){
@@ -37,12 +36,12 @@ export default class ColorPicker extends Component {
                     <option className="jla-select-option" value={this.state.option6}>cubic-bezier</option>
                 </select>
                 <p className="jla-paragraph">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tamen
+                    Sed tamen
                     <a href="#" className={`${this.state.styles} instagram`}>instagram</a> quid velit. Quod quidem iam fit etiam in Academia.
                 </p>
                 <p className="jla-paragraph">
                     Si enim ad populum me vocas, eum. Contineo me ab exemplis. Non potes,
-                    <a href="#" className={`${this.state.styles} twitter`}>twitter</a> illa. Certe non potest.
+                    <a href="#" className={`${this.state.styles} twitter`}>twitter</a> illa.
                     Lorem ipsum dolor sit amet Voluptate nesciunt alias optio consequuntur
                     quae nisi aliquam adipisci, a <a className={`${this.state.styles} shrek`} href="#">shrek</a> facere minus fugit praesentium, amet atque
                     dolorum nam omnis iste.

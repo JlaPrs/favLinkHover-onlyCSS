@@ -11,6 +11,7 @@
   padding: 20px;
   margin-top: 20px;
   text-transform: uppercase;
+  width: 250px;
 
   .jla-select-option {
     color: #353434;
@@ -33,20 +34,19 @@
 }
 
 
+$link: #EC407A;
 
 a {
   display: inline-block;
   position: relative;
-  color: red;
+  color: $link;
   text-decoration: none;
   padding: 0 6px;
 }
 
-//second paragraph link style
-$color-primary: #67953b;
 
 @mixin inlineLinkHoverAnimation(
-  $color: $color-primary,
+  $color: $link,
   $opacity: 1,
   $height-start: 80%,
   $height-hover: 200%,
@@ -60,21 +60,18 @@ $color-primary: #67953b;
 ){
   & #{$element} {
     text-decoration: none;
-    color: inherit;
+    color: #353434;
     cursor: pointer;
     background-size: 100% ($height-start);
     background-repeat: no-repeat;
     transition: background $duration ease;
 
     @if $from == 'bottom' {
-      background-image:         linear-gradient(to top, rgba($color, $opacity) 50%, rgba(0,0,0,0) 50.1%);
+      background-image: linear-gradient(to top, rgba($color, $opacity) 50%, rgba(0,0,0,0) 50.1%);
       background-position: left 0 bottom ($offset-start);
 
     } @else if $from == 'top' {
-      background-image: -webkit-linear-gradient(top,       rgba($color, $opacity) 50%, rgba(0,0,0,0) 50.1%);
-      background-image:    -moz-linear-gradient(top,       rgba($color, $opacity) 50%, rgba(0,0,0,0) 50.1%);
-      background-image:         linear-gradient(to bottom, rgba($color, $opacity) 50%, rgba(0,0,0,0) 50.1%);
-
+      background-image:         linear-gradient(to bottom, #128bad5e 50%, rgba(0, 0, 0, 0) 50.1%);
       background-position: left 0 top ($offset-start);
     }
 
@@ -91,10 +88,9 @@ $color-primary: #67953b;
     outline: none;
   }
 
-
-
   &:hover #{$element}{
     background-size: 100% ($height-hover);
+    color: #353434;
 
     @if $from == 'bottom' {
       background-position: left 0 bottom ($offset-hover);
@@ -166,8 +162,8 @@ $color-primary: #67953b;
     left: 0;
     width: 100%;
     height: 100%;
-    background: $color-primary;
-    //opacity: 0.3;
+    background: $link;
+    opacity: 0.6;
   }
 
   &:hover {
@@ -176,7 +172,7 @@ $color-primary: #67953b;
     &:before {
       transition: 100ms ease-out;
       transform: scaleY(.18);
-      background: $color-primary;
+      background: $link;
     }
   }
 }
@@ -246,8 +242,6 @@ $color-primary: #67953b;
 
 
 // Option 6 - cubic-bezier hover
-$link: #EC407A;
-
 .a6 {
   position: relative;
 display: inline;
