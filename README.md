@@ -5,4 +5,4 @@ Here are some of my favorite (S)CSS Link Hover effects
 
 [img]: https://github.com/JlaPrs/favLinkHover-onlyCSS/blob/master/my-app/src/images/favorite-link-hover-effects.jpg "How my Homepage looks like"
 
-[DEMO](http://juliaprimus.de/favLinks/my-app/)
+Live Demo is coming soon!
