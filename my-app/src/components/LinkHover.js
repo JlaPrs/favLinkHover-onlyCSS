@@ -12,7 +12,8 @@ export default class ColorPicker extends Component {
             option3: 'a3',
             option4: 'a4',
             option5: 'a5',
-            option6: 'a6'
+            option6: 'a6',
+            option7: 'a7'
         };
     }
 
@@ -34,6 +35,7 @@ export default class ColorPicker extends Component {
                     <option className="jla-select-option" value={this.state.option4}>Full to bottom</option>
                     <option className="jla-select-option" value={this.state.option5}>brand colors</option>
                     <option className="jla-select-option" value={this.state.option6}>cubic-bezier</option>
+                    <option className="jla-select-option" value={this.state.option7}>Font gradient</option>
                 </select>
                 <p className="jla-paragraph">
                     Sed tamen
